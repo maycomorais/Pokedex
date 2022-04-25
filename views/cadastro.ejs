@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+        <link rel="shortcut icon" href="https://www.shareicon.net/data/2016/10/18/844155_game_512x512.png">
+    <title>CADASTRO</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+        <legend><h1>REGISTRAR NOVO POKEMON</h1></legend>
+        <section id="cad">
+            <fieldset id="field_principal">
+                <form action="/cadastro" method="post">
+                    <fieldset>                        
+                        <fieldset>
+                            <label for='nome'>nome: </label>
+                            <input placeholder="NOME" type='text' id='nomec' name='nome' required>
+                        </fieldset>
+
+                        <fieldset>                       
+                            <label for='tipo'>tipo: </label>
+                            <input placeholder="TIPO" type='text' id='tipoc' name='tipo' required>
+                        </fieldset>
+
+                        <fieldset>
+                            <label for='descricao'>descrição: </label>
+                            <input placeholder="DESCRIÇÃO" type='text' id='descricaoc' name='descricao' required>
+                        </fieldset>
+
+                        <fieldset>
+                            <label for='peso'>peso: (min 0.1) </label>
+                            <input placeholder="PESO" type='number' min='0.1' step='0.1' id='pesoc' name='peso' required>
+                        </fieldset>
+
+                        <fieldset>
+                            <label for='altura'>altura: (min 0.1) </label>
+                            <input placeholder="ALTURA" type='number' min='0.1' step='0.1' id='alturac' name='altura' required>
+                        </fieldset>
+
+                        <fieldset>
+                            <label for='categoria'>categoria: </label>
+                            <input placeholder="CATEGORIA" type='text' id='categoriac' name='categoria' required>
+                        </fieldset>
+
+                        <fieldset>
+                            <label for='habilidade'>habilidade: </label>
+                            <input placeholder="HABILIDADE" type='text' id='habilidadec' name='habilidade' required>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label for='imagem'>Link da imagem: </label>
+                            <input placeholder="LINK DA IMAGEM" type='url' id='imagemc' name='imagem' required>
+                        </fieldset>
+
+                        <fieldset>
+                            <center><button id='gravarc' type='submit'>GRAVAR</button></center>
+                        </fieldset>
+                    </fieldset>
+                </form>
+            </fieldset>
+        </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

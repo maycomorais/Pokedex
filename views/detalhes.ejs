@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="https://www.shareicon.net/data/2016/10/18/844155_game_512x512.png">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+        <h1 class="detalhe"> DETALHES </h1>
+        <section class="detalhe">
+            <img id="img_detalhe" src="<%= pokemon.imagem %>" alt="<%= pokemon.nome %> ">
+            <table> 
+                <thead> 
+                    <td colspan="2"> <h2><%= pokemon.nome %></h2> </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> ID: <%= pokemon.id %>  </td>
+                        <td> TIPO: <%= pokemon.tipo %>  </td>
+                    </tr>
+                    <tr>
+                        <td> ALTURA: <%= pokemon.altura %>  </td>
+                        <td> PESO: <%= pokemon.peso %>  </td>
+                    </tr>
+                    <tr>
+                        <td> CATEGORIA: <%= pokemon.categoria %> </td>
+                        <td> HABILIDADE: <%= pokemon.habilidade %> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> DESCRIÇÃO: <%= pokemon.descricao %>  </td>
+                    </tr>
+                </tbody>        
+            </table>
+        </section>
+         
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
+
+<!-- <tr> Table Row - LINHA DA TABELA--> 
+<!-- <td> Tablew Dir - COLUNA DA TABELA-->
+<!--<thead> Table Head - CABEÇALHO DA TABELA-->
+<!--<tbody> Table Body - CORPO DA TABELA-->
+<!--<tfoot> Table Foot - RODAPÉ DA TABELA-->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="shortcut icon" href="https://www.shareicon.net/data/2016/10/18/844155_game_512x512.png">
+        <title>Home</title>
+    </head>
+    <body>
+        <%- include('./partials/header.ejs') %>
+        <%- include('./partials/nav.ejs') %>
+        <main>
+            <section id="pokemons">
+                <% pokemons.forEach(element => { %>
+                    <article class="card" >
+                        <div class="card_image" style="transform: translateX(0px);">
+                            <img src="<%= element.imagem %> "
+                                alt="<%= element.nome %> ">
+                        </div>
+                        <a href="/detalhes/<%= element.id %> ">
+                            <div class="pokedetalhe">
+                                <img src="https://i.ibb.co/F7gS135/pokebola-go-png.png" alt="">
+                            </div>
+                        </a>
+                        <div class="pokeinfo">
+                            <ul>
+                                <div>NOME: <%= element.nome %></div>
+                                <div>TIPO: <%= element.tipo %></div>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                <%    }) %>
+            </section>
+        </main>
+
+        <%- include('./partials/footer.ejs') %>
+    </body>
+</html>
