@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "engine": {
-    "node":"14.x"
+    "node":"14.x",
+    "heroku-postbuild": "npm run build"
   },
   "type": "module",
   "scripts": {
+    "heroku-postbuild": "npm run build",
     "start": "node index.js",
     "dev": "nodemon -e js, html, css, ejs"
   },
