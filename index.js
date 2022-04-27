@@ -1,3 +1,4 @@
+require("dotenv").config();
 import express from "express"; //IMPORTANDO O EXPRESS
 import path from "path";  //SERVE PARA DEFINIR CAMINHOS PADRÕES
 const app = express(); // INSTANCIANDO O EXPRESS DENTRO DA CONST APP
