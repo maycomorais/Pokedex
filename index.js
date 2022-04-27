@@ -5,6 +5,7 @@ import express from "express"; //IMPORTANDO O EXPRESS
 import path from "path";  //SERVE PARA DEFINIR CAMINHOS PADRÕES
 const app = express(); // INSTANCIANDO O EXPRESS DENTRO DA CONST APP
 const PORT = process.env.PORT || 3003; //Criando uma porta para o servidor
+let message = "";
 let pokemons = [
     {
         id: 1,
@@ -125,8 +126,11 @@ app.listen(PORT, () => { //LISTEN É UMA FUNÇÃO EXPRESS PARA CRIAR UM SERVIDOR
   });
 
 app.get("/", function (req, res) { //GET É UM MÉTODO HTTP/HTTPS QUE SERVE PARA TRAZER UMA PÁGINA
+    setTimeout(() => {
+        message = "";
+      }, 1000);
     res.render('index.ejs', {
-        pokemons
+        pokemons, message
     })
 },);
 
@@ -140,12 +144,12 @@ app.get("/detalhes/:id", function (req, res) {
         
     })
     res.render("detalhes.ejs", {
-        pokemon
+        pokemon, message
         
     });
 });
 app.get("/cadastro", (req, res) => {
-    res.render('cadastro.ejs')
+    res.render('cadastro.ejs', {message})
     ;
 });
 
@@ -154,7 +158,10 @@ app.post('/cadastro', (req,res) => {
     const {nome, tipo, imagem, descricao, altura, peso, categoria, habilidade} = req.body
     pokemons.push({id: i, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade})
     res.redirect('/');
+    message = `POKEMON REGISTRADO COM SUCESSO`
 });
+
+
 
 const __dirname = path.resolve(path.dirname("")); //DIRNAME SERVE PARA INFORMAR QUAL O CAMINHO PADRÃO PARA A MINHA PASTA
 

@@ -51,6 +51,7 @@ nav.faixa {
     
 }
 li {
+    
     justify-content: center;
     list-style: none;
     margin: 10px;
@@ -61,6 +62,7 @@ li {
     
 }
 li a {
+    height: 5%;
     justify-content: center;
     padding: 5px 10 px;
     margin: 0;
@@ -252,5 +254,31 @@ footer a {
   
   footer a:hover {
     color: #000000;
+  }
+
+/* DISPLAY DE ALERTA */
+section#message {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: rgba(84,5,5,0.8);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  span#close {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  span#close:hover{
+    color: rgb(255, 0, 0);
+    transform: scale(1.5);
   }
   
