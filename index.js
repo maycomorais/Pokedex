@@ -4,7 +4,7 @@ dotenv.config();
 import express from "express"; //IMPORTANDO O EXPRESS
 import path from "path";  //SERVE PARA DEFINIR CAMINHOS PADRÕES
 const app = express(); // INSTANCIANDO O EXPRESS DENTRO DA CONST APP
-const PORT = 3003 || process.env.PORT; //Criando uma porta para o servidor
+const PORT = process.env.PORT || 3003; //Criando uma porta para o servidor
 let pokemons = [
     {
         id: 1,
